@@ -1,15 +1,53 @@
 import "./Home.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import ResourceItem from "./ResourceItem";
+import { useQuery } from "@tanstack/react-query";
+import CourseItem from "./CourseItem";
+
+async function listResources() {
+    const url = "http://localhost:4000/item/all";
+        const res = await fetch(url, {
+            method: 'GET',
+        });
+
+    const data = await res.json();
+
+    return data.map(d => {
+        return <ResourceItem resource={d}/>
+    })
+}
+
+async function listCourses() {
+    const url = "http://localhost:4000/course/all";
+        const res = await fetch(url, {
+            method: 'GET',
+        });
+
+    const data = await res.json();
+
+    return data.map(d => {
+        return <CourseItem courseInfo={d}/>
+    })
+}
 
 export default function Home() {
   const navigate = useNavigate();
   const location = useLocation();
   const currentUser = location.state?.user;
   console.log(currentUser);
-
   if (currentUser === null || currentUser === undefined) {
     navigate("/login");
   }
+
+  const items = useQuery({
+        queryKey: ["items"],
+        queryFn: listResources,
+    })
+
+  const courses = useQuery({
+        queryKey: ["courses"],
+        queryFn: listCourses,
+    })
 
   return (
     <>
@@ -63,12 +101,11 @@ export default function Home() {
             <div className="dashBottom">
               <div className="dashCol">
                 <span className="dashListText">Resources</span>
-                <div className="dashList">{/* RECENT RESOURCES GO HERE */}</div>
+                <div className="dashList">{items.isSuccess && items.data}</div>
               </div>
               <div className="dashCol">
-                <span className="dashListText">Courses</span>
+                <span className="dashListText">{courses.isSuccess && courses.data}</span>
                 <div className="dashList">
-                  {/* SUBSCIBED COURSES GO HERE */}
                 </div>
               </div>
             </div>
