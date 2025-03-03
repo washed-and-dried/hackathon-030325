@@ -1,5 +1,6 @@
 package com.washed.RennalaLib.services;
 
+import com.washed.RennalaLib.dto.ItemVM;
 import com.washed.RennalaLib.models.Item;
 import com.washed.RennalaLib.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,11 +19,19 @@ public class ItemService {
         return this.itemRepository.findAll();
     }
 
-    public Item createItem(Item item, long userId, long courseId) {
-        item.setMyUser(this.userService.getUser(userId));
-        item.setCourse(this.courseService.getCourse(courseId));
+    public Item createItem(ItemVM item) {
+        Item itemm = Item.builder()
+                .url(item.getUrl())
+                .name(item.getName())
+                .availability(item.getAvailability())
+                .description(item.getDescription())
+                .uploadedOn(item.getUploadedOn())
+                .build();
 
-        return this.itemRepository.save(item);
+        itemm.setMyUser(this.userService.getUser(item.getUser_id()));
+        itemm.setCourse(this.courseService.getCourse(item.getCourse_id()));
+
+        return this.itemRepository.save(itemm);
     }
 
     public Item getItem(long id) {

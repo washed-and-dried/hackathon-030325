@@ -1,5 +1,6 @@
 package com.washed.RennalaLib.controllers;
 
+import com.washed.RennalaLib.dto.ItemVM;
 import com.washed.RennalaLib.models.Item;
 import com.washed.RennalaLib.services.ItemService;
 import lombok.RequiredArgsConstructor;
@@ -23,8 +24,8 @@ public class ItemController {
         return this.itemService.getItem(id);
     }
 
-    @PostMapping("/{user-id}/{course-id}/create")
-    public Item createItem(@RequestBody Item item, @PathVariable("user-id") long user_id, @PathVariable("course-id") long course_id) {
-        return this.itemService.createItem(item, user_id, course_id);
+    @PostMapping("/create")
+    public Item createItem(@RequestBody ItemVM item) {
+        return this.itemService.createItem(item);
     }
 }

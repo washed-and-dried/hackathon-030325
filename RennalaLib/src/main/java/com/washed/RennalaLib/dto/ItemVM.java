@@ -1,23 +1,16 @@
-package com.washed.RennalaLib.models;
+package com.washed.RennalaLib.dto;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "items")
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Builder
-public class Item {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class ItemVM {
     private Long id;
 
     private String name;
@@ -26,9 +19,6 @@ public class Item {
     private Date availability;
     private Date uploadedOn;
 
-    @ManyToOne
-    private MyUser myUser;
-
-    @ManyToOne
-    private Course course;
+    private Long user_id;
+    private Long course_id;
 }
