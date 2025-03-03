@@ -1,3 +1,4 @@
+import CourseItem from "./CourseItem";
 import "./Courses.css";
 
 export default function Courses() {
@@ -5,7 +6,7 @@ export default function Courses() {
     <>
       <div className="main">
         <div className="middle-layout">
-          <div className="courseItem">Hello</div>
+          <CourseItem />
         </div>
       </div>
     </>

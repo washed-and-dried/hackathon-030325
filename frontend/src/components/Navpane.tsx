@@ -33,13 +33,18 @@ export default function Navpane() {
       <div className="huh"></div>
 
       <div className="bottom-box">
-        <div className="bottom-box-individual">
+        <div className="top-box-css1">
           <img src={tasksvg}></img>
-          <span className="bottom-box-text">info</span>
+          <span className="top-box-text">
+            <NavLink to={"/profile"}>Profile</NavLink>
+          </span>
         </div>
-        <div className="bottom-box-individual">
+
+        <div className="top-box-css1">
           <img src={tasksvg}></img>
-          <span className="bottom-box-text">support</span>
+          <span className="top-box-text">
+            <NavLink to={"/profile"}>Profile</NavLink>
+          </span>
         </div>
       </div>
     </div>
