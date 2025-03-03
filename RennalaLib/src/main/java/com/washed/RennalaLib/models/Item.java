@@ -25,7 +25,7 @@ public class Item {
     private Date uploadedOn;
 
     @ManyToOne
-    private User user;
+    private MyUser myUser;
 
     @ManyToOne
     private Course course;

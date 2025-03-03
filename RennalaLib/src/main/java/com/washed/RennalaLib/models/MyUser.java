@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class User {
+public class MyUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long user_id;

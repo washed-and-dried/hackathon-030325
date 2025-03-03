@@ -2,7 +2,7 @@ package com.washed.RennalaLib.controllers;
 
 import com.washed.RennalaLib.dto.GenericResponse;
 import com.washed.RennalaLib.dto.UserDto;
-import com.washed.RennalaLib.models.User;
+import com.washed.RennalaLib.models.MyUser;
 import com.washed.RennalaLib.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    private User signupUser(@RequestBody User user) {
-        return this.userService.signupUser(user);
+    private MyUser signupUser(@RequestBody MyUser myUser) {
+        return this.userService.signupUser(myUser);
     }
 }
