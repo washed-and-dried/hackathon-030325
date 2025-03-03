@@ -21,3 +21,144 @@
   align-self: stretch;
   border-radius: 10px;
 }
+
+.homeTopBox {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.homeLeft {
+  color: var(--primary, #1d3557);
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.homeRight {
+  display: flex;
+  padding: 5px 10px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  align-self: stretch;
+}
+
+.homeSearchBox {
+  display: flex;
+  width: 140px;
+  padding: 8px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background: var(--item-bg, #efefef);
+  border: 1px solid #ccc;
+}
+
+.homeSearchInput {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  font-family: Poppins, sans-serif;
+  color: var(--text-on-item, #333);
+  padding: 5px;
+  min-width: 60px;
+}
+
+.homeSearchButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeSearchIcon {
+  width: 11px;
+  height: 11px;
+  fill: var(--text-on-item, #b7b5b5);
+  transition: fill 0.2s ease-in-out;
+}
+
+.homeSearchButton:hover .homeSearchIcon {
+  fill: #555;
+}
+
+.homeNotiButton {
+  background: white;
+  border: 0 #000;
+}
+
+.homeNotiButton:hover {
+  cursor: pointer;
+}
+
+.homeNotiIcon {
+  width: 14.4px;
+  height: 18px;
+
+  fill: var(--text-on-item, #b7b5b5);
+}
+
+.homeNotiIcon {
+  fill: var(--text-on-item, #555);
+}
+
+.dashboard {
+  display: flex;
+  padding: 0px 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.dashText {
+  color: var(--primary, #1d3557);
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.dashBottom {
+  display: flex;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.dashCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 50%;
+}
+
+.dashListText {
+  color: var(--primary, #1d3557);
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.dashList {
+  display: flex;
+  padding: 10px 0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
