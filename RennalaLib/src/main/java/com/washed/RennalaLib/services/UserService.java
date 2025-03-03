@@ -22,4 +22,8 @@ public class UserService {
         //FIXME: didn't check if the myUser already exists or not
         return this.userRepository.save(myUser);
     }
+
+    public MyUser getUser(final long userId) {
+        return this.userRepository.findById(userId).orElseThrow(() -> new RuntimeException("Man it just doesn't work"));
+    }
 }
