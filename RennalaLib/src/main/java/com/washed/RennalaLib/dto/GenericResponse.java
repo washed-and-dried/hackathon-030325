@@ -1,5 +1,6 @@
 package com.washed.RennalaLib.dto;
 
+import com.washed.RennalaLib.models.MyUser;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,4 +12,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GenericResponse {
     private String message;
+    private MyUser user;
 }

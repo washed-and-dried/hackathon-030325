@@ -2,15 +2,14 @@
 import "./components/global-resets.css";
 import Navpane from "./components/Navpane";
 import Routing from "./Routing";
-import Login from "./components/Login";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function App() {
   return (
     <>
       <div id="app-container">
-        <Login />
-        {/* <Navpane /> */}
-        {/* <Routing /> */}
+        <Navpane />
+        <Routing />
       </div>
     </>
   );

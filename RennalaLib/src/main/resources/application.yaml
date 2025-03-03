@@ -19,3 +19,7 @@ spring:
     name: USER-SERVICE
 server:
   port: 4000
+
+management:
+  security:
+    enabled: false

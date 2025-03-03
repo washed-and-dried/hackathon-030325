@@ -5,14 +5,12 @@ import com.washed.RennalaLib.dto.UserDto;
 import com.washed.RennalaLib.models.MyUser;
 import com.washed.RennalaLib.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/user")
+@CrossOrigin(origins = "")
 public class UserController {
     private final UserService userService;
 

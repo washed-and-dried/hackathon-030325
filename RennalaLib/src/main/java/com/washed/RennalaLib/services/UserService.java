@@ -26,4 +26,11 @@ public class UserService {
     public MyUser getUser(final long userId) {
         return this.userRepository.findById(userId).orElseThrow(() -> new RuntimeException("Man it just doesn't work"));
     }
+
+    public MyUser getUserByUsername(String username) {
+        return this.userRepository.findAll()
+                .stream().filter(myUser -> myUser.getName().equals(username))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Man it just doesn't work"));
+    }
 }

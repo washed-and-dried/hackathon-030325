@@ -1,6 +1,16 @@
 import "./Home.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const currentUser = location.state?.user;
+  console.log(currentUser);
+
+  if (currentUser === null || currentUser === undefined) {
+    navigate("/login");
+  }
+
   return (
     <>
       <div className="main">
