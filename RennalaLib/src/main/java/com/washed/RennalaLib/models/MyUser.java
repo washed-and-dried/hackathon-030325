@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "renalla_user")
 
@@ -20,4 +22,7 @@ public class MyUser {
     private String email;
     private String password;
     private String avatar_url;
+
+    @OneToMany
+    private List<Course> courses;
 }
