@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RennalaLibApplication {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RennalaLibApplication.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }
